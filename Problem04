@@ -1,0 +1,9 @@
+#!/usr/bin/python
+maxi = 0
+for x in range(100,1000):
+        for a in range(100,1000):
+                m = x*a
+                rev = str(m)
+                if(str(m) == rev[::-1] and m>maxi):
+                        maxi = m
+print maxi

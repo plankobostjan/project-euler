@@ -1,0 +1,38 @@
+#!/usr/bin/python
+import math
+
+def isPrime(n):
+    if n==1:
+        return False
+    elif n<4: # 2 and 3 are prime
+        return True
+    elif n%2==0:
+        return False
+    elif n<9: #4, 6 and 8 are already excluded
+        return True
+    elif n%3==0:
+        return False
+    else:
+        r=int(math.sqrt(n))
+        f=5
+        while f<=r:
+            if n%f==0:
+                return False
+            elif n%(f+2)==0:
+                return False
+            f+=6
+        return True
+
+def main():
+        zap = 0
+        n = 1
+        prime = 0
+        while zap != 10001:
+                if isPrime(n):
+                        zap += 1
+                        prime = n
+                n += 1
+        print prime
+
+if __name__ == '__main__':
+        main()
